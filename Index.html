@@ -1,0 +1,402 @@
+<!DOCKTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domestic Help Connect</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background: #333;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        nav a:hover {
+            background: #4CAF50;
+        }
+        .container {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .hero {
+            background: #f4f4f4;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+        .job-list, .worker-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .job-card, .worker-card {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .job-card h3, .worker-card h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .hidden {
+            display: none;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form div {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <marquee><h1>Domestic Help Connect</h1></marquee>
+        <p marquee behavior="animate"><font color="#FF5733">connecting house helpers with employers</font>
+    </header>
+    
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('jobs')">Find Jobs</a>
+        <a href="#" onclick="showSection('workers')">Find Helpers</a>
+        <a href="#" onclick="showSection('post-job')">Post a Job</a>
+        <a href="#" onclick="showSection('register')">Register</a>
+    </nav>
+    
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero">
+                <h2><font color="#3380FF">Find Domestic Help or Employment</font></h2>
+                <p>We connect qualified house helpers with employers looking for domestic assistance</p>
+                <a href="#" class="btn" onclick="showSection('register')">Register as Helper</a>
+                <a href="#" class="btn" onclick="showSection('post-job')">Post a Job</a>
+            </div>
+            
+         <div class="contact-info">
+                <h4>Other Ways to Reach Us</h4>
+                <p><i class="fas fa-phone"></i> +254 (741278248)</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +254 (741278248)</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Jobs Section -->
+        <section id="jobs" class="hidden">
+            <h2>Available Jobs</h2>
+            <div class="job-list">
+                <!-- Jobs will be listed here -->
+          <h2>Housekeeping Positions</h2>
+    <ul>
+        <li>Full-time Housekeeper</li>
+        <li>Part-time Cleaner</li>
+        <li>Live-in Maid</li>
+        <li>Daily Cleaning Helper</li>
+        <li>Deep Cleaning Specialist</li>
+    </ul>
+    
+    <h2>Childcare Positions</h2>
+    <ul>
+        <li>Full-time Nanny</li>
+        <li>After-school Babysitter</li>
+        <li>Newborn Care Specialist</li>
+        <li>Weekend Childminder</li>
+        <li>Tutor/Nanny Combination</li>
+    </ul>
+    
+    <h2>Elderly Care Positions</h2>
+    <ul>
+        <li>Companion Caregiver</li>
+        <li>Live-in Elderly Care Assistant</li>
+        <li>Medical Care Assistant</li>
+        <li>Part-time Senior Helper</li>
+        <li>Dementia Care Specialist</li>
+    </ul>
+    
+    <h2>Other Domestic Positions</h2>
+    <ul>
+        <li>Family Cook</li>
+        <li>Laundry Specialist</li>
+        <li>Gardener/Housekeeper</li>
+        <li>Driver/Household Helper</li>
+        <li>All-around Household Assistant</li>
+    </ul>
+    <fieldset>
+            <legend><b>Select Job Position(s) You're Interested In</b></legend>
+            
+            <h3><font color="#FF5733">Housekeeping Positions</font></h3>
+            <input type="checkbox" id="job1" name="job_preferences[]" value="Full-time Housekeeper">
+            <label for="job1">Full-time Housekeeper</label><br>
+            
+            <input type="checkbox" id="job2" name="job_preferences[]" value="Part-time Cleaner">
+            <label for="job2">Part-time Cleaner</label><br>
+            
+            <input type="checkbox" id="job3" name="job_preferences[]" value="Live-in Maid">
+            <label for="job3">Live-in Maid</label><br>
+            
+            <input type="checkbox" id="job4" name="job_preferences[]" value="Daily Cleaning Helper">
+            <label for="job4">Daily Cleaning Helper</label><br>
+            
+            <input type="checkbox" id="job5" name="job_preferences[]" value="Deep Cleaning Specialist">
+            <label for="job5">Deep Cleaning Specialist</label><br><br>
+            
+            <h3><font color="#3380FF">Childcare Positions</font></h3>
+            <input type="checkbox" id="job6" name="job_preferences[]" value="Full-time Nanny">
+            <label for="job6">Full-time Nanny</label><br>
+            
+            <input type="checkbox" id="job7" name="job_preferences[]" value="After-school Babysitter">
+            <label for="job7">After-school Babysitter</label><br>
+            
+            <input type="checkbox" id="job8" name="job_preferences[]" value="Newborn Care Specialist">
+            <label for="job8">Newborn Care Specialist</label><br>
+            
+            <input type="checkbox" id="job9" name="job_preferences[]" value="Weekend Childminder">
+            <label for="job9">Weekend Childminder</label><br>
+            
+            <input type="checkbox" id="job10" name="job_preferences[]" value="Tutor/Nanny Combination">
+            <label for="job10">Tutor/Nanny Combination</label><br><br>
+            
+            <h3><font color="#33FF57">Elderly Care Positions</font></h3>
+            <input type="checkbox" id="job11" name="job_preferences[]" value="Companion Caregiver">
+            <label for="job11">Companion Caregiver</label><br>
+            
+            <input type="checkbox" id="job12" name="job_preferences[]" value="Live-in Elderly Care Assistant">
+            <label for="job12">Live-in Elderly Care Assistant</label><br>
+            
+            <input type="checkbox" id="job13" name="job_preferences[]" value="Medical Care Assistant">
+            <label for="job13">Medical Care Assistant</label><br>
+            
+            <input type="checkbox" id="job14" name="job_preferences[]" value="Part-time Senior Helper">
+            <label for="job14">Part-time Senior Helper</label><br>
+            
+            <input type="checkbox" id="job15" name="job_preferences[]" value="Dementia Care Specialist">
+            <label for="job15">Dementia Care Specialist</label><br><br>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Availability</b></legend>
+            <input type="radio" id="fulltime" name="availability" value="Full-time" checked>
+            <label for="fulltime">Full-time</label><br>
+            
+            <input type="radio" id="parttime" name="availability" value="Part-time">
+            <label for="parttime">Part-time</label><br>
+            
+            <input type="radio" id="flexible" name="availability" value="Flexible hours">
+            <label for="flexible">Flexible hours</label><br>
+            
+            <input type="radio" id="livein" name="availability" value="Live-in position">
+            <label for="livein">Live-in position</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Additional Information</b></legend>
+            <textarea name="additional_info" rows="5" cols="50" placeholder="Please provide any additional information about your skills, experience, or preferences..."></textarea>
+        </fieldset>
+
+        <br>
+
+        <center>
+            <input type="submit" value="Submit Application">
+            <input type="reset" value="Clear Form">
+        </center>
+    </form>
+
+    <p>
+        <marquee behavior="alternate" scrollamount="2" width="300">
+            <font color="#FF0000">We appreciate your application! We'll contact you soon.</font>
+        </marquee>
+    </p>
+    <p>Contact us at: +254(741278248)</p>
+            </div>
+        </section>
+        <!-- Post Job Section -->
+        <section id="post-job" class="hidden">
+            <h2>Post a Job</h2>
+            <form id="job-form">
+                <div>
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" required>
+                </div>
+                <div>
+                    <label for="job-type">Job Type</label>
+                    <select id="job-type" required>
+                        <option value="">Select</option>
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                        <option value="live-in">Live-in</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="location">Location</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div>
+                    <label for="salary">Salary</label>
+                    <input type="text" id="salary" required>
+                </div>
+                <div>
+                    <label for="description">Job Description</label>
+                    <textarea id="description" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Post Job</button>
+            </form>
+        </section>
+        
+        <!-- Register Section -->
+        <section id="register" class="hidden">
+            <h2>Register</h2>
+            <form id="register-form">
+                <div>
+                    <label>Register as:</label>
+                    <div>
+                        <input type="radio" id="helper" name="user-type" value="helper" checked>
+                        <label for="helper">House Helper</label>
+                        <input type="radio" id="employer" name="user-type" value="employer">
+                        <label for="employer">Employer</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div id="helper-fields">
+                    <div>
+                        <label for="age">Age</label>
+                        <input type="number" id="age">
+                    </div>
+                    <div>
+                        <label for="experience">Experience (years)</label>
+                        <input type="number" id="experience">
+                    </div>
+                    <div>
+                        <label for="skills">Skills</label>
+                        <textarea id="skills" rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </section>
+        
+        <!-- Apply Section -->
+        <section id="apply" class="hidden">
+            <h2>Apply for Job</h2>
+            <p>Please register or login to apply for this position.</p>
+            <a href="#" class="btn" onclick="showSection('register')">Register Now</a>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="hidden">
+            <h2>Contact Helper</h2>
+            <p>Please register or login to contact this helper.</p>
+            <a href="#" class="btn" onclick="showSection('register')">Register Now</a>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Domestic Help Connect. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Simple show/hide section functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Toggle helper fields based on user type selection
+        document.getElementById('employer').addEventListener('change', function() {
+            document.getElementById('helper-fields').style.display = 'none';
+        });
+        
+        document.getElementById('helper').addEventListener('change', function() {
+            document.getElementById('helper-fields').style.display = 'block';
+        });
+        
+        // Form submission handling (just alerts for this demo)
+        document.getElementById('job-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Job posted successfully! (This is a demo - no actual posting)');
+            showSection('home');
+        });
+        
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Registration successful! (This is a demo - no actual registration)');
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
